@@ -38,7 +38,7 @@ void* cruzar_carril(void* arg) {
         sem_wait(&semaforo_cruce);
         #endif
         en_cruce = 1;
-        usleep(2500 + (rand() % (5000 - 2500 + 1)));  // USAR AQUÍ LA GENERACION DE TIEMPO ALEATORIO ENTRE 2500 y 5000 us
+        usleep(2500 + (rand() % (5000 - 2500 + 1)));
         en_cruce = 0;
         
         #ifdef FASE_2
@@ -75,7 +75,7 @@ int main() {
     sem_init(&mutex_contadores, 0, 1);
     #endif
     
-    srand((unsigned)time(NULL));
+    srand(time(NULL));
 
     print_reporte();
     
